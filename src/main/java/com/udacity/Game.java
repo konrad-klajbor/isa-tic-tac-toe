@@ -150,7 +150,7 @@ public class Game {
      */
     public String checkGameWinner(char [][]grid){
         String result = "None";
-        if (freeSpots==0){result="Tie";}
+
         //Student code goes here ...
         for (int i=0;i<3;i++){
             if (grid[i][0]==grid[i][1]&&grid[i][1]==grid[i][2]&&grid[i][0]!='-'){
@@ -167,7 +167,7 @@ public class Game {
         if ((grid[1][1]==grid[2][0]&&grid[1][1]==grid[0][2])&&grid[1][1]!='-'){
             if (grid[1][1]=='x'){result="X wins";}else{result="O wins";}}
 
-
+        if (freeSpots==0&&result=="None"){result="tie";}
         return result;
     }
 
